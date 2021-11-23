@@ -42,6 +42,14 @@ const boardLast = (a, b) => {
   return 0
 }
 
+function convertMonthsToYears(months) {
+  if (months >= 12)
+    return `${Math.round(months / 12)} ${
+      Math.round(months / 12) === 1 ? "year" : "years"
+    }`
+  return `${months} ${months === 1 ? "month" : "months"}`
+}
+
 export const setManagementData = (managementRoles, data) => {
   const returnValue = []
   stripFunctions(removeDuplicates(data, "name"), managementRoles)
@@ -54,7 +62,9 @@ export const setManagementData = (managementRoles, data) => {
           from: func?.valid_from ? func?.valid_from : "-",
           seniority: func?.valid_from ? (
             <div>
-              <div>{monthDiff(new Date(func?.valid_from))} months</div>
+              <div>
+                {convertMonthsToYears(monthDiff(new Date(func?.valid_from)))}
+              </div>
               <div
                 style={{
                   background: handleProgressBar(func?.valid_from),

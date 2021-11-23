@@ -1,4 +1,4 @@
-import { setManagementData } from "./utils/setManagementData"
+import {setManagementData} from "./utils/setManagementData"
 const managementRoles = [
   "MANAGEMENT",
   "ADMINISTRATION",
@@ -10,16 +10,27 @@ const managementRoles = [
   "STAKEHOLDER",
 ]
 
-const Management = ({ relations }) => {
-  const { management, boardOfDirectors } = relations
+const Management = ({relations}) => {
+  const {management, boardOfDirectors} = relations
 
   const managementData = setManagementData(managementRoles, [
     ...management,
     ...boardOfDirectors,
   ])
-  const keys = Object.keys(managementData[0])
+
+  const keys = managementData.length ? Object.keys(managementData[0]) : []
+
+  if (!managementData.length)
+    return (
+      <div>
+        <h2>Company relations</h2>
+        <p>This company doesn't have any relations</p>
+      </div>
+    )
+
   return (
     <div>
+      <h2>Company relations</h2>
       <table>
         <thead>
           <tr>
