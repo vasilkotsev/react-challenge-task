@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+
+/* Common styles */
+body {
+  font-family: "Roboto", sans-serif;
+  color: #323232;
+  background: #e4e9eb;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.page {
+  min-height: calc(100vh - 150px);
+  padding: 0 0 2rem;
+}
+
+footer {
+  background: #0d9ecf;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}
+
+section {
+  padding: 1rem 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.label,
+.sublabel {
+  font-weight: 600;
+}
+
+.sublabel {
+  font-style: italic;
+}
+
+.back-btn {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* Homepage styles */
+.homepage-title {
+  padding: 2rem 1.25rem 0.5rem;
+}
+
+.no-result-message {
+  padding-top: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.homepage-logo {
+  position: relative;
+  width: 100px;
+  height: 113px;
+  margin: 6rem auto 4rem;
+}
+
+.company-card {
+  padding: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  border-radius: 7px;
+  background: #fff;
+  -webkit-transition: 0.15s ease;
+  -moz-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  -ms-transition: 0.15s ease;
+  transition: 0.15s ease;
+  box-shadow: 0px 0px 6px #888;
+}
+
+.company-card h3,
+.company-card a {
+  color: #19325c;
+}
+
+.status span:first-child {
+  font-weight: bold;
+}
+
+.company-card:hover {
+  box-shadow: 0px 1px 40px #888;
+  color: inherit;
+}
+
+.company-card:hover a {
+  text-decoration: none;
+}
+
+/* Detailed page styles */
+
+.detailed-page h2 {
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.basic-information {
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0px 1px 26px #888;
+}
+
+.basic-info-row {
+  padding-bottom: 0.25rem;
+}
+
+.basic-info-row ul {
+  font-style: italic;
+  font-size: 14px;
+  margin: 0;
+}
+
+.classification {
+  margin: 20px 0;
+}
+
+.classification-label {
+  font-weight: 600;
+}
+
+.classification .badge-pill {
+  font-size: 16px;
+  display: inline-block;
+  margin-left: 7px;
+}
+
+.company-highlight {
+  background: #fff;
+  border: 1px solid;
+  border-radius: 65px;
+  padding: 1.5rem 2.25rem;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+.company-highlight h3 {
+  font-size: 1.25rem;
+}
+
+.company-highlight p {
+  margin-bottom: 0;
+}
+
+.company-highlight.negative-color {
+  border-color: #dc3545;
+  background: #dc3545;
+}
+
+.company-highlight.positive-color {
+  border-color: #28a745;
+  background: #28a745;
+}
+.company-highlight.neutral-color {
+  border-color: #6c757d;
+  background-color: #6c757d;
+}
+
+table {
+  border: none;
+}
+
+thead {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  background: #d7d9db;
+}
+
+thead th {
+  padding: 0.5rem;
+}
+
+th,
+td {
+  border: 1px solid #999;
+  padding: 0.25rem;
+}
+
+.relations-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+.table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  box-shadow: 0px 1px 26px #888;
+}
+
+/* Responsive styles */
+@media all and (max-width: 991.98px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media all and (max-width: 767.98px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media all and (max-width: 575.98px) {
+  html {
+    font-size: 85%;
+  }
+
+  .homepage-logo {
+    width: 80px;
+    height: 93px;
+  }
+
+  p,
+  span,
+  .classification .badge-pill {
+    font-size: 14px;
+  }
+}

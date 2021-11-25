@@ -1,4 +1,4 @@
-import {setManagementData} from "./utils/setManagementData"
+import { setManagementData } from "./utils/setManagementData";
 const managementRoles = [
   "MANAGEMENT",
   "ADMINISTRATION",
@@ -7,50 +7,63 @@ const managementRoles = [
   "CHAIRMAN",
   "DEPUTY CHAIRMAN",
   "DEPUTY",
-  "STAKEHOLDER",
-]
+  "STAKEHOLDER"
+];
 
-const Management = ({relations}) => {
-  const {management, boardOfDirectors} = relations
+const Management = ({ relations }) => {
+  const { management, boardOfDirectors } = relations;
 
   const managementData = setManagementData(managementRoles, [
     ...management,
-    ...boardOfDirectors,
-  ])
+    ...boardOfDirectors
+  ]);
 
-  const keys = managementData.length ? Object.keys(managementData[0]) : []
+  const keys = managementData.length ? Object.keys(managementData[0]) : [];
 
   if (!managementData.length)
     return (
       <div>
         <h2>Company relations</h2>
-        <p>This company doesn't have any relations</p>
+        <p
+          style={{
+            padding: "20px",
+            fontSize: "18px",
+            textAlign: "center",
+            fontWeight: "bold"
+          }}
+        >
+          This company doesn't have any relations
+        </p>
       </div>
-    )
+    );
 
   return (
-    <div>
+    <section>
       <h2>Company relations</h2>
-      <table>
-        <thead>
-          <tr>
-            {keys.map((key) => (
-              <th key={`only keys ${key}`}>{key}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {managementData.map((data, i) => (
-            <tr key={i}>
-              {keys.map((key) => (
-                <th key={key}>{data[key]}</th>
+      <div className="container">
+        <div className="table-wrapper">
+          <table className="relations-table border-none">
+            <thead>
+              <tr>
+                {keys.map(key => (
+                  <th key={`only keys ${key}`}>{key}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {managementData.map((data, i) => (
+                <tr key={i}>
+                  {keys.map(key => (
+                    <th key={key}>{data[key]}</th>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  )
-}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Management
+export default Management;

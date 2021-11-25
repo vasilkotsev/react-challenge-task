@@ -6,6 +6,7 @@
 .pnp.js
 .history
 .idea
+.vscode
 package-lock.json
 
 # testing
